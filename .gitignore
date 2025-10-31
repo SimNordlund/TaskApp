@@ -1,0 +1,16 @@
+/deployment/           # //Changed!
+/data/                 # //Changed!
+/modeler/              # //Changed!
+/packages/             # //Changed!
+/.apt_generated/       # //Changed!
+/.m2/                  # //Changed!
+.gradle/               # //Changed!
+npm-debug.log*         # //Changed!
+yarn-error.log*        # //Changed!
+.DS_Store              # //Changed!
+Thumbs.db              # //Changed!
+*.iml                  # //Changed!
+*.userprefs            # //Changed!
+/themesource/**/.sass-cache/   # //Changed!
+/themesource/**/.parcel-cache/ # //Changed!
+/themesource/**/.cache/        # //Changed!
