@@ -1,0 +1,36 @@
+ext {
+	mendixJavaVersion = 21
+	mendixInstallDir = "C:/Program Files/Mendix/10.24.9.81004"
+	projectName = "TaskApp"
+	projectSafeName = "TaskApp"
+	mendixProjectDir = "C:/Users/TaraR/Mendix/TaskApp"
+	deploymentDir = "C:/Users/TaraR/Mendix/TaskApp/deployment"
+	dataSnapshotFile = "C:/Users/TaraR/Mendix/TaskApp/data-snapshot.zip"
+	dataDir = "C:/Users/TaraR/Mendix/TaskApp/deployment/data"
+	extractDataSnapshot = false
+	templatesDir = "C:/Program Files/Mendix/10.24.9.81004/modeler/runtemplates"
+	runDir = "run"
+	compileTargetDir = "run/bin"
+	deploymentDirName = "deployment"
+	modelDirName = "model"
+	resourcesDirName = "resources"
+	javaSourceDirName = "javasource"
+	libDirName = "lib"
+	userlibDirName = "userlib"
+	vendorlibDirName = "vendorlib"
+	generateFullDebugInfo = false
+	excludedRunTemplatesFiles = [
+		"**/*.template"
+	]
+	excludedJavaActions = []
+	publicApiJars = [
+		"runtime/bundles/com.mendix.json.jar",
+		"runtime/bundles/com.mendix.logging-api.jar",
+		"runtime/bundles/com.mendix.m2ee-api.jar",
+		"runtime/bundles/com.mendix.public-api.jar",
+		"runtime/bundles/org.eclipse.jetty.toolchain.jetty-servlet-api.jar",
+		"runtime/bundles/org.eclipse.jetty.toolchain.jetty-javax-websocket-api.jar"
+	]
+	excludedJars = []
+	protectedModules = []
+}
