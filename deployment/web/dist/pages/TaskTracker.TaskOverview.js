@@ -1,28 +1,28 @@
-import { reactExports, asPluginWidgets, Fragment, addEnumerations, selectTranslation } from '../index-CmmNAaD_.js';
-import { PageFragment, ExpressionProperty } from '../Placeholder-C-HgUb7V.js';
-import { ActionButton, TextProperty, ActionProperty } from '../ActionButton-Lvo3cUXR.js';
-import { AssociationObjectProperty } from '../AssociationObjectProperty-CHQX1JXa.js';
-import { DatabaseObjectListProperty } from '../DatabaseObjectListProperty-BT0YTY5Y.js';
-import { GalleryWidgetModule, ProgressBarWidgetModule, ListActionProperty } from '../ProgressBar-1prCBHiI.js';
-import { MicroflowObjectProperty } from '../MicroflowObjectProperty-DLdVhvlH.js';
-import { TemplatedWidgetProperty } from '../TemplatedWidgetProperty-Bndflwva.js';
-import { WebIconProperty } from '../WebIconProperty-1dryrwHb.js';
-import { WebStaticImageProperty } from '../WebStaticImageProperty-wM04NpCa.js';
-import { ConditionalVisibilityWrapper } from '../ConditionalVisibilityWrapper-mFTB0b_c.js';
-import { Container } from '../Container-C4PtBaC3.js';
-import { DataView } from '../DataView-DHR-h_WZ.js';
-import { Div } from '../Div-bo4CfIge.js';
-import '../Fragment-CnCEolc0.js';
-import { ImageWidgetModule, Text } from '../Text-2bw0AGlh.js';
-import { content as content$1 } from '../TaskTracker.Tasks_TopBar-C9ksztLj.js';
-import '../DaFVLkxr-Bkn_Z2yo.js';
-import '../D4nQ98US-BSWF3v9H.js';
-import '../DGnMnCeA-DoCJg-gF.js';
-import '../bdxqAC6d-BxVkIcZq.js';
-import '../InlineText-BNtoJ06u.js';
-import '../SidebarToggle-B0wNZJLB.js';
-import '../Y8h_6YnI-DQxyyQ7Y.js';
-import '../ScrollContainer-KQJM2kpR.js';
+import { reactExports, asPluginWidgets, Fragment, addEnumerations, selectTranslation } from '../index-4mfddfkU.js';
+import { PageFragment, ExpressionProperty } from '../Placeholder-Ouf8FsgU.js';
+import { ActionButton, TextProperty, ActionProperty } from '../ActionButton-B2qOJ4td.js';
+import { AssociationObjectProperty } from '../AssociationObjectProperty-DekUHBTZ.js';
+import { DatabaseObjectListProperty } from '../DatabaseObjectListProperty-bv83QC9Y.js';
+import { GalleryWidgetModule, ProgressBarWidgetModule, ListActionProperty } from '../ProgressBar-CdjoDNSY.js';
+import { MicroflowObjectProperty } from '../MicroflowObjectProperty-DSOqr-FG.js';
+import { TemplatedWidgetProperty } from '../TemplatedWidgetProperty-CAuzrF8_.js';
+import { WebIconProperty } from '../WebIconProperty-D31g4FWT.js';
+import { WebStaticImageProperty } from '../WebStaticImageProperty-_lIkqA-b.js';
+import { ConditionalVisibilityWrapper } from '../ConditionalVisibilityWrapper-51nXt5AX.js';
+import { Container } from '../Container-Dx2M9vEg.js';
+import { DataView } from '../DataView-BR45rEOj.js';
+import { Div } from '../Div-DARk7tBI.js';
+import '../Fragment-DrLk0xpL.js';
+import { ImageWidgetModule, Text } from '../Text-BEd6XRh9.js';
+import { content as content$1 } from '../TaskTracker.Tasks_TopBar-CgXkLda9.js';
+import '../DaFVLkxr-BwbOhnke.js';
+import '../D4nQ98US-DIL-lu1k.js';
+import '../DGnMnCeA-CZ4oDNF6.js';
+import '../bdxqAC6d-DAEMpsZ9.js';
+import '../InlineText-C-RvyD35.js';
+import '../SidebarToggle-fh3TqfUx.js';
+import '../Y8h_6YnI-C02bM5Tk.js';
+import '../ScrollContainer-C-B529-s.js';
 
 var n,o={exports:{}};
 /*!
@@ -736,6 +736,49 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               ]),
                               renderMode: "h2"
                             }
+                          ),
+                          /* @__PURE__ */ React.createElement(
+                            $ConditionalVisibilityWrapper,
+                            {
+                              key: "p.TaskTracker.TaskOverview.actionButton4$visibility",
+                              $widgetId: "p.TaskTracker.TaskOverview.actionButton4$visibility",
+                              visible: ExpressionProperty({
+                                "expression": { "expr": { "type": "function", "name": "_hasSomeRole", "parameters": [{ "type": "literal", "value": "Manager" }, { "type": "literal", "value": "Member" }] }, "args": {} }
+                              }),
+                              contents: [
+                                /* @__PURE__ */ React.createElement(
+                                  $ActionButton,
+                                  {
+                                    key: "p.TaskTracker.TaskOverview.actionButton4",
+                                    $widgetId: "p.TaskTracker.TaskOverview.actionButton4",
+                                    buttonId: "p.TaskTracker.TaskOverview.actionButton4",
+                                    class: "mx-name-actionButton4 pull-right spacing-outer-right-large spacing-outer-bottom-medium btn-lg",
+                                    style: void 0,
+                                    tabIndex: void 0,
+                                    renderType: "button",
+                                    role: void 0,
+                                    buttonClass: "btn-danger",
+                                    caption: selectTranslation([
+                                      ExpressionProperty({
+                                        "expression": { "expr": { "type": "literal", "value": "New" }, "args": {} }
+                                      })
+                                    ]),
+                                    tooltip: TextProperty({
+                                      "value": selectTranslation([
+                                        ""
+                                      ])
+                                    }),
+                                    icon: WebIconProperty({
+                                      "icon": { "type": "icon", "iconClass": "mx-icon-lined mx-icon-add-circle" }
+                                    }),
+                                    action: ActionProperty({
+                                      "action": { "type": "createObject", "argMap": {}, "config": { "entity": "TaskTracker.Task", "operationId": "Ye1utDvFDFmrXRvwruWtPg", "pageSettings": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "allowedRoles": ["Manager", "Member"], "objectParameter": "param$Task" }, "disabledDuringExecution": true },
+                                      "abortOnServerValidation": true
+                                    })
+                                  }
+                                )
+                              ]
+                            }
                           )
                         ]
                       }
@@ -766,7 +809,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               $widgetId: "p.TaskTracker.TaskOverview.gallery2",
                               advanced: false,
                               datasource: DatabaseObjectListProperty({
-                                "dataSourceId": "p.56",
+                                "dataSourceId": "p.58",
                                 "entity": "TaskTracker.Task",
                                 "operationId": "wbuRWMnKgV6O13vzuTWFZw",
                                 "sort": [
@@ -778,7 +821,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                 "constraints": { "type": "function", "name": "=", "parameters": [{ "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "To_Do" }] }
                               }),
                               content: TemplatedWidgetProperty({
-                                "dataSourceId": "p.56",
+                                "dataSourceId": "p.58",
                                 "editable": false,
                                 "children": () => [
                                   /* @__PURE__ */ React.createElement(
@@ -808,16 +851,16 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.105",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.105",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.106",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.106",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.106",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.106",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.107",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.107",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
@@ -857,8 +900,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.111",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.111",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.112",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.112",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
@@ -871,7 +914,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                     style: void 0,
                                                                     tabIndex: void 0,
                                                                     object: AssociationObjectProperty({
-                                                                      "dataSourceId": "p.114",
+                                                                      "dataSourceId": "p.115",
                                                                       "scope": "p.TaskTracker.TaskOverview.gallery2",
                                                                       "editable": true,
                                                                       "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -941,7 +984,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                   style: void 0,
                                                   tabIndex: void 0,
                                                   object: AssociationObjectProperty({
-                                                    "dataSourceId": "p.119",
+                                                    "dataSourceId": "p.120",
                                                     "scope": "p.TaskTracker.TaskOverview.gallery2",
                                                     "editable": true,
                                                     "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -984,16 +1027,16 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.124",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.124",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.125",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.125",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.125",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.125",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.126",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.126",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
@@ -1033,8 +1076,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.130",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.130",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.131",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.131",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
@@ -1171,7 +1214,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               onClick: ListActionProperty({
                                 "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery2", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "disabledDuringExecution": false },
                                 "abortOnServerValidation": false,
-                                "dataSourceId": "p.56",
+                                "dataSourceId": "p.58",
                                 "argumentTypes": {}
                               }),
                               filterList: [],
@@ -1216,7 +1259,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               $widgetId: "p.TaskTracker.TaskOverview.gallery3",
                               advanced: false,
                               datasource: DatabaseObjectListProperty({
-                                "dataSourceId": "p.57",
+                                "dataSourceId": "p.59",
                                 "entity": "TaskTracker.Task",
                                 "operationId": "KZW7IU+Qn1+OL39tXLH0Og",
                                 "sort": [
@@ -1228,7 +1271,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                 "constraints": { "type": "function", "name": "=", "parameters": [{ "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Running" }] }
                               }),
                               content: TemplatedWidgetProperty({
-                                "dataSourceId": "p.57",
+                                "dataSourceId": "p.59",
                                 "editable": false,
                                 "children": () => [
                                   /* @__PURE__ */ React.createElement(
@@ -1240,8 +1283,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                         /* @__PURE__ */ React.createElement(
                                           $Container,
                                           {
-                                            key: "p.TaskTracker.TaskCard.container3.148",
-                                            $widgetId: "p.TaskTracker.TaskCard.container3.148",
+                                            key: "p.TaskTracker.TaskCard.container3.149",
+                                            $widgetId: "p.TaskTracker.TaskCard.container3.149",
                                             class: "mx-name-container3 card shadow-medium",
                                             style: void 0,
                                             renderMode: "div",
@@ -1250,32 +1293,32 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $Div,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.layoutGrid1.149",
-                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid1.149",
+                                                  key: "p.TaskTracker.TaskCard.layoutGrid1.150",
+                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid1.150",
                                                   class: "mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none",
                                                   style: void 0,
                                                   content: [
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.150",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.150",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.151",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.151",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.151",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.151",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.152",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.152",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text4.152",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text4.152",
+                                                                    key: "p.TaskTracker.TaskCard.text4.153",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text4.153",
                                                                     class: "mx-name-text4 hide-phone hide-tablet",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1289,8 +1332,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text8.153",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text8.153",
+                                                                    key: "p.TaskTracker.TaskCard.text8.154",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text8.154",
                                                                     class: "mx-name-text8 hide-desktop",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1307,21 +1350,21 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.154",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.154",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.155",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.155",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $DataView,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.dataView5.155",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.dataView5.155",
+                                                                    key: "p.TaskTracker.TaskCard.dataView5.156",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.dataView5.156",
                                                                     class: "mx-name-dataView5 pull-right form-vertical",
                                                                     style: void 0,
                                                                     tabIndex: void 0,
                                                                     object: AssociationObjectProperty({
-                                                                      "dataSourceId": "p.156",
+                                                                      "dataSourceId": "p.157",
                                                                       "scope": "p.TaskTracker.TaskOverview.gallery3",
                                                                       "editable": true,
                                                                       "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -1336,14 +1379,14 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Image,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.image1.157",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.image1.157",
+                                                                          key: "p.TaskTracker.TaskCard.image1.158",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.image1.158",
                                                                           datasource: "imageUrl",
                                                                           imageObject: void 0,
                                                                           defaultImageDynamic: void 0,
                                                                           imageUrl: selectTranslation([
                                                                             ExpressionProperty({
-                                                                              "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.155", "source": "object" } } }
+                                                                              "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.156", "source": "object" } } }
                                                                             })
                                                                           ]),
                                                                           imageIcon: void 0,
@@ -1385,13 +1428,13 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $DataView,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.dataView9.158",
-                                                  $widgetId: "p.TaskTracker.TaskCard.dataView9.158",
+                                                  key: "p.TaskTracker.TaskCard.dataView9.159",
+                                                  $widgetId: "p.TaskTracker.TaskCard.dataView9.159",
                                                   class: "mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical",
                                                   style: void 0,
                                                   tabIndex: void 0,
                                                   object: AssociationObjectProperty({
-                                                    "dataSourceId": "p.159",
+                                                    "dataSourceId": "p.160",
                                                     "scope": "p.TaskTracker.TaskOverview.gallery3",
                                                     "editable": true,
                                                     "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -1406,13 +1449,13 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                     /* @__PURE__ */ React.createElement(
                                                       $Text,
                                                       {
-                                                        key: "p.TaskTracker.TaskCard.text6.160",
-                                                        $widgetId: "p.TaskTracker.TaskCard.text6.160",
+                                                        key: "p.TaskTracker.TaskCard.text6.161",
+                                                        $widgetId: "p.TaskTracker.TaskCard.text6.161",
                                                         class: "mx-name-text6 text-detail spacing-outer-bottom",
                                                         style: void 0,
                                                         caption: selectTranslation([
                                                           ExpressionProperty({
-                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.158", "source": "object" } } }
+                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.159", "source": "object" } } }
                                                           })
                                                         ]),
                                                         renderMode: "p"
@@ -1426,32 +1469,32 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $Div,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.layoutGrid2.161",
-                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid2.161",
+                                                  key: "p.TaskTracker.TaskCard.layoutGrid2.162",
+                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid2.162",
                                                   class: "mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid",
                                                   style: void 0,
                                                   content: [
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.162",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.162",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.163",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.163",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.163",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.163",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.164",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.164",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text5.164",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text5.164",
+                                                                    key: "p.TaskTracker.TaskCard.text5.165",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text5.165",
                                                                     class: "mx-name-text5 hide-phone hide-tablet",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1465,8 +1508,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text7.165",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text7.165",
+                                                                    key: "p.TaskTracker.TaskCard.text7.166",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text7.166",
                                                                     class: "mx-name-text7 hide-desktop",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1483,16 +1526,16 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.166",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.166",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.167",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.167",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge1$visibility.167",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge1$visibility.167",
+                                                                    key: "p.TaskTracker.TaskCard.badge1$visibility.168",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge1$visibility.168",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery3", "source": "object" } } }
                                                                     }),
@@ -1500,8 +1543,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge1.167",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge1.167",
+                                                                          key: "p.TaskTracker.TaskCard.badge1.168",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge1.168",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -1520,8 +1563,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge2$visibility.168",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge2$visibility.168",
+                                                                    key: "p.TaskTracker.TaskCard.badge2$visibility.169",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge2$visibility.169",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery3", "source": "object" } } }
                                                                     }),
@@ -1529,8 +1572,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge2.168",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge2.168",
+                                                                          key: "p.TaskTracker.TaskCard.badge2.169",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge2.169",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -1549,8 +1592,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge3$visibility.169",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge3$visibility.169",
+                                                                    key: "p.TaskTracker.TaskCard.badge3$visibility.170",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge3$visibility.170",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery3", "source": "object" } } }
                                                                     }),
@@ -1558,8 +1601,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge3.169",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge3.169",
+                                                                          key: "p.TaskTracker.TaskCard.badge3.170",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge3.170",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -1621,7 +1664,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               onClick: ListActionProperty({
                                 "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery3", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "disabledDuringExecution": false },
                                 "abortOnServerValidation": false,
-                                "dataSourceId": "p.57",
+                                "dataSourceId": "p.59",
                                 "argumentTypes": {}
                               }),
                               filterList: [],
@@ -1666,7 +1709,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               $widgetId: "p.TaskTracker.TaskOverview.gallery4",
                               advanced: false,
                               datasource: DatabaseObjectListProperty({
-                                "dataSourceId": "p.58",
+                                "dataSourceId": "p.60",
                                 "entity": "TaskTracker.Task",
                                 "operationId": "c8eN41V48VqZdexYDWwNxg",
                                 "sort": [
@@ -1678,7 +1721,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                 "constraints": { "type": "function", "name": "=", "parameters": [{ "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Review" }] }
                               }),
                               content: TemplatedWidgetProperty({
-                                "dataSourceId": "p.58",
+                                "dataSourceId": "p.60",
                                 "editable": false,
                                 "children": () => [
                                   /* @__PURE__ */ React.createElement(
@@ -1690,8 +1733,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                         /* @__PURE__ */ React.createElement(
                                           $Container,
                                           {
-                                            key: "p.TaskTracker.TaskCard.container3.178",
-                                            $widgetId: "p.TaskTracker.TaskCard.container3.178",
+                                            key: "p.TaskTracker.TaskCard.container3.179",
+                                            $widgetId: "p.TaskTracker.TaskCard.container3.179",
                                             class: "mx-name-container3 card shadow-medium",
                                             style: void 0,
                                             renderMode: "div",
@@ -1700,32 +1743,32 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $Div,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.layoutGrid1.179",
-                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid1.179",
+                                                  key: "p.TaskTracker.TaskCard.layoutGrid1.180",
+                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid1.180",
                                                   class: "mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none",
                                                   style: void 0,
                                                   content: [
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.180",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.180",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.181",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.181",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.181",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.181",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.182",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.182",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text4.182",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text4.182",
+                                                                    key: "p.TaskTracker.TaskCard.text4.183",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text4.183",
                                                                     class: "mx-name-text4 hide-phone hide-tablet",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1739,8 +1782,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text8.183",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text8.183",
+                                                                    key: "p.TaskTracker.TaskCard.text8.184",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text8.184",
                                                                     class: "mx-name-text8 hide-desktop",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1757,21 +1800,21 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.184",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.184",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.185",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.185",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $DataView,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.dataView5.185",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.dataView5.185",
+                                                                    key: "p.TaskTracker.TaskCard.dataView5.186",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.dataView5.186",
                                                                     class: "mx-name-dataView5 pull-right form-vertical",
                                                                     style: void 0,
                                                                     tabIndex: void 0,
                                                                     object: AssociationObjectProperty({
-                                                                      "dataSourceId": "p.186",
+                                                                      "dataSourceId": "p.187",
                                                                       "scope": "p.TaskTracker.TaskOverview.gallery4",
                                                                       "editable": true,
                                                                       "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -1786,14 +1829,14 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Image,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.image1.187",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.image1.187",
+                                                                          key: "p.TaskTracker.TaskCard.image1.188",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.image1.188",
                                                                           datasource: "imageUrl",
                                                                           imageObject: void 0,
                                                                           defaultImageDynamic: void 0,
                                                                           imageUrl: selectTranslation([
                                                                             ExpressionProperty({
-                                                                              "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.185", "source": "object" } } }
+                                                                              "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.186", "source": "object" } } }
                                                                             })
                                                                           ]),
                                                                           imageIcon: void 0,
@@ -1835,13 +1878,13 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $DataView,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.dataView9.188",
-                                                  $widgetId: "p.TaskTracker.TaskCard.dataView9.188",
+                                                  key: "p.TaskTracker.TaskCard.dataView9.189",
+                                                  $widgetId: "p.TaskTracker.TaskCard.dataView9.189",
                                                   class: "mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical",
                                                   style: void 0,
                                                   tabIndex: void 0,
                                                   object: AssociationObjectProperty({
-                                                    "dataSourceId": "p.189",
+                                                    "dataSourceId": "p.190",
                                                     "scope": "p.TaskTracker.TaskOverview.gallery4",
                                                     "editable": true,
                                                     "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -1856,13 +1899,13 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                     /* @__PURE__ */ React.createElement(
                                                       $Text,
                                                       {
-                                                        key: "p.TaskTracker.TaskCard.text6.190",
-                                                        $widgetId: "p.TaskTracker.TaskCard.text6.190",
+                                                        key: "p.TaskTracker.TaskCard.text6.191",
+                                                        $widgetId: "p.TaskTracker.TaskCard.text6.191",
                                                         class: "mx-name-text6 text-detail spacing-outer-bottom",
                                                         style: void 0,
                                                         caption: selectTranslation([
                                                           ExpressionProperty({
-                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.188", "source": "object" } } }
+                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.189", "source": "object" } } }
                                                           })
                                                         ]),
                                                         renderMode: "p"
@@ -1876,32 +1919,32 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $Div,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.layoutGrid2.191",
-                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid2.191",
+                                                  key: "p.TaskTracker.TaskCard.layoutGrid2.192",
+                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid2.192",
                                                   class: "mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid",
                                                   style: void 0,
                                                   content: [
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.192",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.192",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.193",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.193",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.193",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.193",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.194",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.194",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text5.194",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text5.194",
+                                                                    key: "p.TaskTracker.TaskCard.text5.195",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text5.195",
                                                                     class: "mx-name-text5 hide-phone hide-tablet",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1915,8 +1958,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text7.195",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text7.195",
+                                                                    key: "p.TaskTracker.TaskCard.text7.196",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text7.196",
                                                                     class: "mx-name-text7 hide-desktop",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -1933,16 +1976,16 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.196",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.196",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.197",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.197",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge1$visibility.197",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge1$visibility.197",
+                                                                    key: "p.TaskTracker.TaskCard.badge1$visibility.198",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge1$visibility.198",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery4", "source": "object" } } }
                                                                     }),
@@ -1950,8 +1993,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge1.197",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge1.197",
+                                                                          key: "p.TaskTracker.TaskCard.badge1.198",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge1.198",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -1970,8 +2013,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge2$visibility.198",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge2$visibility.198",
+                                                                    key: "p.TaskTracker.TaskCard.badge2$visibility.199",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge2$visibility.199",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery4", "source": "object" } } }
                                                                     }),
@@ -1979,8 +2022,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge2.198",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge2.198",
+                                                                          key: "p.TaskTracker.TaskCard.badge2.199",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge2.199",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -1999,8 +2042,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge3$visibility.199",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge3$visibility.199",
+                                                                    key: "p.TaskTracker.TaskCard.badge3$visibility.200",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge3$visibility.200",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery4", "source": "object" } } }
                                                                     }),
@@ -2008,8 +2051,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge3.199",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge3.199",
+                                                                          key: "p.TaskTracker.TaskCard.badge3.200",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge3.200",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -2071,7 +2114,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               onClick: ListActionProperty({
                                 "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery4", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "disabledDuringExecution": false },
                                 "abortOnServerValidation": false,
-                                "dataSourceId": "p.58",
+                                "dataSourceId": "p.60",
                                 "argumentTypes": {}
                               }),
                               filterList: [],
@@ -2116,7 +2159,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               $widgetId: "p.TaskTracker.TaskOverview.gallery5",
                               advanced: false,
                               datasource: DatabaseObjectListProperty({
-                                "dataSourceId": "p.59",
+                                "dataSourceId": "p.61",
                                 "entity": "TaskTracker.Task",
                                 "operationId": "32Xr/rn9CV2VG3hcstHkiw",
                                 "sort": [
@@ -2128,7 +2171,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                 "constraints": { "type": "function", "name": "=", "parameters": [{ "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Done" }] }
                               }),
                               content: TemplatedWidgetProperty({
-                                "dataSourceId": "p.59",
+                                "dataSourceId": "p.61",
                                 "editable": false,
                                 "children": () => [
                                   /* @__PURE__ */ React.createElement(
@@ -2140,8 +2183,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                         /* @__PURE__ */ React.createElement(
                                           $Container,
                                           {
-                                            key: "p.TaskTracker.TaskCard.container3.208",
-                                            $widgetId: "p.TaskTracker.TaskCard.container3.208",
+                                            key: "p.TaskTracker.TaskCard.container3.209",
+                                            $widgetId: "p.TaskTracker.TaskCard.container3.209",
                                             class: "mx-name-container3 card shadow-medium",
                                             style: void 0,
                                             renderMode: "div",
@@ -2150,32 +2193,32 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $Div,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.layoutGrid1.209",
-                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid1.209",
+                                                  key: "p.TaskTracker.TaskCard.layoutGrid1.210",
+                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid1.210",
                                                   class: "mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none",
                                                   style: void 0,
                                                   content: [
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.210",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.210",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid1$row0.211",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0.211",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.211",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.211",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.212",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.212",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text4.212",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text4.212",
+                                                                    key: "p.TaskTracker.TaskCard.text4.213",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text4.213",
                                                                     class: "mx-name-text4 hide-phone hide-tablet",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -2189,8 +2232,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text8.213",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text8.213",
+                                                                    key: "p.TaskTracker.TaskCard.text8.214",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text8.214",
                                                                     class: "mx-name-text8 hide-desktop",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -2207,21 +2250,21 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.214",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.214",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.215",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.215",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $DataView,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.dataView5.215",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.dataView5.215",
+                                                                    key: "p.TaskTracker.TaskCard.dataView5.216",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.dataView5.216",
                                                                     class: "mx-name-dataView5 pull-right form-vertical",
                                                                     style: void 0,
                                                                     tabIndex: void 0,
                                                                     object: AssociationObjectProperty({
-                                                                      "dataSourceId": "p.216",
+                                                                      "dataSourceId": "p.217",
                                                                       "scope": "p.TaskTracker.TaskOverview.gallery5",
                                                                       "editable": true,
                                                                       "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2236,14 +2279,14 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Image,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.image1.217",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.image1.217",
+                                                                          key: "p.TaskTracker.TaskCard.image1.218",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.image1.218",
                                                                           datasource: "imageUrl",
                                                                           imageObject: void 0,
                                                                           defaultImageDynamic: void 0,
                                                                           imageUrl: selectTranslation([
                                                                             ExpressionProperty({
-                                                                              "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.215", "source": "object" } } }
+                                                                              "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.216", "source": "object" } } }
                                                                             })
                                                                           ]),
                                                                           imageIcon: void 0,
@@ -2285,13 +2328,13 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $DataView,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.dataView9.218",
-                                                  $widgetId: "p.TaskTracker.TaskCard.dataView9.218",
+                                                  key: "p.TaskTracker.TaskCard.dataView9.219",
+                                                  $widgetId: "p.TaskTracker.TaskCard.dataView9.219",
                                                   class: "mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical",
                                                   style: void 0,
                                                   tabIndex: void 0,
                                                   object: AssociationObjectProperty({
-                                                    "dataSourceId": "p.219",
+                                                    "dataSourceId": "p.220",
                                                     "scope": "p.TaskTracker.TaskOverview.gallery5",
                                                     "editable": true,
                                                     "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2306,13 +2349,13 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                     /* @__PURE__ */ React.createElement(
                                                       $Text,
                                                       {
-                                                        key: "p.TaskTracker.TaskCard.text6.220",
-                                                        $widgetId: "p.TaskTracker.TaskCard.text6.220",
+                                                        key: "p.TaskTracker.TaskCard.text6.221",
+                                                        $widgetId: "p.TaskTracker.TaskCard.text6.221",
                                                         class: "mx-name-text6 text-detail spacing-outer-bottom",
                                                         style: void 0,
                                                         caption: selectTranslation([
                                                           ExpressionProperty({
-                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.218", "source": "object" } } }
+                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.219", "source": "object" } } }
                                                           })
                                                         ]),
                                                         renderMode: "p"
@@ -2326,32 +2369,32 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                               /* @__PURE__ */ React.createElement(
                                                 $Div,
                                                 {
-                                                  key: "p.TaskTracker.TaskCard.layoutGrid2.221",
-                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid2.221",
+                                                  key: "p.TaskTracker.TaskCard.layoutGrid2.222",
+                                                  $widgetId: "p.TaskTracker.TaskCard.layoutGrid2.222",
                                                   class: "mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid",
                                                   style: void 0,
                                                   content: [
                                                     /* @__PURE__ */ React.createElement(
                                                       $Div,
                                                       {
-                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.222",
-                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.222",
+                                                        key: "p.TaskTracker.TaskOverview.layoutGrid2$row0.223",
+                                                        $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0.223",
                                                         class: "row",
                                                         style: void 0,
                                                         content: [
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.223",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.223",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.224",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.224",
                                                               class: "col-lg col-md col",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text5.224",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text5.224",
+                                                                    key: "p.TaskTracker.TaskCard.text5.225",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text5.225",
                                                                     class: "mx-name-text5 hide-phone hide-tablet",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -2365,8 +2408,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $Text,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.text7.225",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.text7.225",
+                                                                    key: "p.TaskTracker.TaskCard.text7.226",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.text7.226",
                                                                     class: "mx-name-text7 hide-desktop",
                                                                     style: void 0,
                                                                     caption: selectTranslation([
@@ -2383,16 +2426,16 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                           /* @__PURE__ */ React.createElement(
                                                             $Div,
                                                             {
-                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.226",
-                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.226",
+                                                              key: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.227",
+                                                              $widgetId: "p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.227",
                                                               class: "col-lg-auto col-md-auto col-auto",
                                                               style: void 0,
                                                               content: [
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge1$visibility.227",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge1$visibility.227",
+                                                                    key: "p.TaskTracker.TaskCard.badge1$visibility.228",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge1$visibility.228",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery5", "source": "object" } } }
                                                                     }),
@@ -2400,8 +2443,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge1.227",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge1.227",
+                                                                          key: "p.TaskTracker.TaskCard.badge1.228",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge1.228",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -2420,8 +2463,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge2$visibility.228",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge2$visibility.228",
+                                                                    key: "p.TaskTracker.TaskCard.badge2$visibility.229",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge2$visibility.229",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery5", "source": "object" } } }
                                                                     }),
@@ -2429,8 +2472,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge2.228",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge2.228",
+                                                                          key: "p.TaskTracker.TaskCard.badge2.229",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge2.229",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -2449,8 +2492,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                 /* @__PURE__ */ React.createElement(
                                                                   $ConditionalVisibilityWrapper,
                                                                   {
-                                                                    key: "p.TaskTracker.TaskCard.badge3$visibility.229",
-                                                                    $widgetId: "p.TaskTracker.TaskCard.badge3$visibility.229",
+                                                                    key: "p.TaskTracker.TaskCard.badge3$visibility.230",
+                                                                    $widgetId: "p.TaskTracker.TaskCard.badge3$visibility.230",
                                                                     visible: ExpressionProperty({
                                                                       "expression": { "expr": { "type": "function", "name": "=", "parameters": [{ "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" }] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery5", "source": "object" } } }
                                                                     }),
@@ -2458,8 +2501,8 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                                       /* @__PURE__ */ React.createElement(
                                                                         $Badge,
                                                                         {
-                                                                          key: "p.TaskTracker.TaskCard.badge3.229",
-                                                                          $widgetId: "p.TaskTracker.TaskCard.badge3.229",
+                                                                          key: "p.TaskTracker.TaskCard.badge3.230",
+                                                                          $widgetId: "p.TaskTracker.TaskCard.badge3.230",
                                                                           type: "badge",
                                                                           value: selectTranslation([
                                                                             ExpressionProperty({
@@ -2521,7 +2564,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               onClick: ListActionProperty({
                                 "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery5", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "disabledDuringExecution": false },
                                 "abortOnServerValidation": false,
-                                "dataSourceId": "p.59",
+                                "dataSourceId": "p.61",
                                 "argumentTypes": {}
                               }),
                               filterList: [],
@@ -2552,49 +2595,6 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                       }
                     )
                   ]
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ React.createElement(
-          $ConditionalVisibilityWrapper,
-          {
-            key: "p.TaskTracker.TaskOverview.actionButton2$visibility",
-            $widgetId: "p.TaskTracker.TaskOverview.actionButton2$visibility",
-            visible: ExpressionProperty({
-              "expression": { "expr": { "type": "function", "name": "_hasSomeRole", "parameters": [{ "type": "literal", "value": "Manager" }, { "type": "literal", "value": "Member" }] }, "args": {} }
-            }),
-            contents: [
-              /* @__PURE__ */ React.createElement(
-                $ActionButton,
-                {
-                  key: "p.TaskTracker.TaskOverview.actionButton2",
-                  $widgetId: "p.TaskTracker.TaskOverview.actionButton2",
-                  buttonId: "p.TaskTracker.TaskOverview.actionButton2",
-                  class: "mx-name-actionButton2 pull-right spacing-outer-right-large btn-lg",
-                  style: void 0,
-                  tabIndex: void 0,
-                  renderType: "button",
-                  role: void 0,
-                  buttonClass: "btn-danger",
-                  caption: selectTranslation([
-                    ExpressionProperty({
-                      "expression": { "expr": { "type": "literal", "value": "New" }, "args": {} }
-                    })
-                  ]),
-                  tooltip: TextProperty({
-                    "value": selectTranslation([
-                      ""
-                    ])
-                  }),
-                  icon: WebIconProperty({
-                    "icon": { "type": "icon", "iconClass": "mx-icon-lined mx-icon-add-circle" }
-                  }),
-                  action: ActionProperty({
-                    "action": { "type": "createObject", "argMap": {}, "config": { "entity": "TaskTracker.Task", "operationId": "/AtlmHwVwVGhnmrid6r1pA", "pageSettings": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "allowedRoles": ["Manager", "Member"], "objectParameter": "param$Task" }, "disabledDuringExecution": true },
-                    "abortOnServerValidation": true
-                  })
                 }
               )
             ]

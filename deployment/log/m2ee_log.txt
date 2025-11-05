@@ -1,4 +1,5 @@
 [rtlauncher:container$] INFO Evictions for component 'project-userlib':
 Evicted C:\Users\TaraR\Mendix\TaskApp\deployment\model\lib\userlib\bcprov-jdk15on-1.70.jar by C:\Users\TaraR\Mendix\TaskApp\deployment\model\lib\userlib\bcprov-jdk15on-150.jar.
 Evicted C:\Users\TaraR\Mendix\TaskApp\deployment\model\lib\userlib\oauth2-oidc-sdk-10.7.jar by C:\Users\TaraR\Mendix\TaskApp\deployment\model\lib\userlib\oauth2-oidc-sdk-10.7.1.jar.
-[rtlauncher:container$] INFO Container start took 6348. Ready to accept admin requests.
+[rtlauncher:container$] INFO Container start took 3340. Ready to accept admin requests.
+

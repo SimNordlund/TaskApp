@@ -136,7 +136,9 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                         readOnlyStyle={"control"}
                         maxLength={200}
                         onEnter={undefined}
-                        onLeave={undefined}
+                        onLeave={ActionProperty({
+                            "action": { "type": "callMicroflow", "argMap": { "Task": { "widget": "$Task", "source": "object" } }, "config": { "operationId": "Ue/NU8W7cVG98NT4kSB5kw", "validate": "view", "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false }
+                        })}
                         onEnterKeyPress={undefined}
                         ariaLabel={undefined}
                         autocomplete={"on"}

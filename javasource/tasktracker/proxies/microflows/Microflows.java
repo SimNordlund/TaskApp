@@ -126,6 +126,25 @@ public final class Microflows
 		Object result = getCurrentMendixSSOUserBuilder().execute(context);
 		return result == null ? null : mendixsso.proxies.MendixSSOUser.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder microflowBuilder(
+		tasktracker.proxies.Task _task
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TaskTracker.Microflow");
+		builder = builder.withParam("Task", _task);
+		return builder;
+	}
+
+	public static void microflow(
+		IContext context,
+		tasktracker.proxies.Task _task
+	)
+	{
+		microflowBuilder(
+				_task
+			)
+			.execute(context);
+	}
 	public static com.mendix.core.actionmanagement.MicroflowCallBuilder postCommentBuilder(
 		tasktracker.proxies.CommentHelper _commentHelper,
 		tasktracker.proxies.Task _task

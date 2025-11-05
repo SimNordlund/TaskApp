@@ -1,32 +1,32 @@
-import { LogManager, asProperty, getSubscribedObjectState$, pageScope, getFormExpressionResultFromStore$, toFriendlyId, fromConstant$, available, fromComputation$, getOrElseL, useValue, readUntracked, runInAction, getPreviousValue$, withSideEffect$, ensure, AssertionError, getUI, getData, unavailable, getRuntimeArguments$, onlineData, reactExports, newId, reactDomExports, getHTMLElement, jsxRuntimeExports, requiredArgs, toDate, getLocale, addYears, subYears, addMonths, subMonths, addDays, subDays, toInteger, classNames, DayOfWeek, getFocusableContainer, isMobileDevice, deepEqual, translate, asPluginWidgets, addEnumerations, selectTranslation } from '../index-CmmNAaD_.js';
-import { PageFragment, ExpressionProperty } from '../Placeholder-C-HgUb7V.js';
-import { Icon, ActionButton, TextProperty, ActionProperty } from '../ActionButton-Lvo3cUXR.js';
-import { AssociationObjectProperty } from '../AssociationObjectProperty-CHQX1JXa.js';
-import { AssociationProperty } from '../AssociationProperty-XJpi39f2.js';
-import { Alert, getAriaLabelProps, getValidationAriaProps, FormGroup, TextBox, DerivedUniqueIdProperty, ValidationProperty } from '../TextBox-Do0-cbSY.js';
-import { DatabaseObjectListProperty } from '../DatabaseObjectListProperty-BT0YTY5Y.js';
-import { runActionInComputed } from '../DaFVLkxr-Bkn_Z2yo.js';
-import { ListAttributeProperty } from '../ListAttributeProperty-D4skSNMF.js';
-import { handleDataSourceExecutionError } from '../DGnMnCeA-DoCJg-gF.js';
-import { getClientPagedList$ } from '../DHEha0DV-BfcsHE5o.js';
-import { MicroflowObjectProperty } from '../MicroflowObjectProperty-DLdVhvlH.js';
-import { TemplatedWidgetProperty } from '../TemplatedWidgetProperty-Bndflwva.js';
-import { WebStaticImageProperty } from '../WebStaticImageProperty-wM04NpCa.js';
-import { ComboboxWidgetModule } from '../Combobox-BRPh3CMU.js';
-import { ConditionalVisibilityWrapper } from '../ConditionalVisibilityWrapper-mFTB0b_c.js';
-import { Container } from '../Container-C4PtBaC3.js';
-import { DataView } from '../DataView-DHR-h_WZ.js';
-import { isRightToLeft } from '../D2Vzasyw-DOTGS83T.js';
-import { Div } from '../Div-bo4CfIge.js';
-import { usePersistentState } from '../Y8h_6YnI-DQxyyQ7Y.js';
-import { InlineText } from '../InlineText-BNtoJ06u.js';
-import { ImageWidgetModule, Text } from '../Text-2bw0AGlh.js';
-import { ListView } from '../ListView-IBA2Ve1-.js';
-import { TextArea } from '../TextArea-tfUIFyAA.js';
-import { content as content$1 } from '../TaskTracker.FullScreenPopup-CuMN2z_A.js';
-import { AttributeProperty } from '../DR_P8f0l-CzNiznAJ.js';
-import '../D4nQ98US-BSWF3v9H.js';
-import '../bdxqAC6d-BxVkIcZq.js';
+import { LogManager, asProperty, getSubscribedObjectState$, pageScope, getFormExpressionResultFromStore$, toFriendlyId, fromConstant$, available, fromComputation$, getOrElseL, useValue, readUntracked, runInAction, getPreviousValue$, withSideEffect$, ensure, AssertionError, getUI, getData, unavailable, getRuntimeArguments$, onlineData, reactExports, newId, reactDomExports, getHTMLElement, jsxRuntimeExports, requiredArgs, toDate, getLocale, addYears, subYears, addMonths, subMonths, addDays, subDays, toInteger, classNames, DayOfWeek, getFocusableContainer, isMobileDevice, deepEqual, translate, asPluginWidgets, addEnumerations, selectTranslation } from '../index-4mfddfkU.js';
+import { PageFragment, ExpressionProperty } from '../Placeholder-Ouf8FsgU.js';
+import { Icon, ActionButton, TextProperty, ActionProperty } from '../ActionButton-B2qOJ4td.js';
+import { AssociationObjectProperty } from '../AssociationObjectProperty-DekUHBTZ.js';
+import { AssociationProperty } from '../AssociationProperty-CF1FJ32t.js';
+import { Alert, getAriaLabelProps, getValidationAriaProps, FormGroup, TextBox, DerivedUniqueIdProperty, ValidationProperty } from '../TextBox-mUv4K12o.js';
+import { DatabaseObjectListProperty } from '../DatabaseObjectListProperty-bv83QC9Y.js';
+import { runActionInComputed } from '../DaFVLkxr-BwbOhnke.js';
+import { ListAttributeProperty } from '../ListAttributeProperty-B0JILsy2.js';
+import { handleDataSourceExecutionError } from '../DGnMnCeA-CZ4oDNF6.js';
+import { getClientPagedList$ } from '../DHEha0DV-5IauuTPM.js';
+import { MicroflowObjectProperty } from '../MicroflowObjectProperty-DSOqr-FG.js';
+import { TemplatedWidgetProperty } from '../TemplatedWidgetProperty-CAuzrF8_.js';
+import { WebStaticImageProperty } from '../WebStaticImageProperty-_lIkqA-b.js';
+import { ComboboxWidgetModule } from '../Combobox-8ejWYmFd.js';
+import { ConditionalVisibilityWrapper } from '../ConditionalVisibilityWrapper-51nXt5AX.js';
+import { Container } from '../Container-Dx2M9vEg.js';
+import { DataView } from '../DataView-BR45rEOj.js';
+import { isRightToLeft } from '../D2Vzasyw-BMHgR16a.js';
+import { Div } from '../Div-DARk7tBI.js';
+import { usePersistentState } from '../Y8h_6YnI-C02bM5Tk.js';
+import { InlineText } from '../InlineText-C-RvyD35.js';
+import { ImageWidgetModule, Text } from '../Text-BEd6XRh9.js';
+import { ListView } from '../ListView-D-gr4tYK.js';
+import { TextArea } from '../TextArea-DgG3pdIh.js';
+import { content as content$1 } from '../TaskTracker.FullScreenPopup-B1J14ntB.js';
+import { AttributeProperty } from '../DR_P8f0l-DCAAJywf.js';
+import '../D4nQ98US-DIL-lu1k.js';
+import '../bdxqAC6d-DAEMpsZ9.js';
 
 const logger$1 = LogManager.get().getLogger(), FileUploadProperty = asProperty((config, store, widgetId, propertyPath) => {
   const object$ = getSubscribedObjectState$(store, config.scope), [subtreeReadonly$] = store.useSlot(pageScope, "subtreeReadonly"), isEditable$ = config.isEditable ? getFormExpressionResultFromStore$(`Conditional editability of ${toFriendlyId(widgetId)}`, config.isEditable, store) : fromConstant$(available(true)), readOnly$ = fromComputation$(`Readonly of ${widgetId}/${propertyPath}`, () => "available" !== object$.dependOn().status || !getOrElseL(isEditable$.dependOn(), false) || Boolean(subtreeReadonly$.dependOn()));
@@ -970,7 +970,9 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                   readOnlyStyle: "control",
                   maxLength: 200,
                   onEnter: void 0,
-                  onLeave: void 0,
+                  onLeave: ActionProperty({
+                    "action": { "type": "callMicroflow", "argMap": { "Task": { "widget": "$Task", "source": "object" } }, "config": { "operationId": "Ue/NU8W7cVG98NT4kSB5kw", "validate": "view", "allowedRoles": ["Manager", "Member"] }, "disabledDuringExecution": false }
+                  }),
                   onEnterKeyPress: void 0,
                   ariaLabel: void 0,
                   autocomplete: "on",
