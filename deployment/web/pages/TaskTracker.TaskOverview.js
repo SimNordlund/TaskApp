@@ -10,6 +10,7 @@ import { ListActionProperty } from "mendix/ListActionProperty";
 import { MicroflowObjectProperty } from "mendix/MicroflowObjectProperty";
 import { TemplatedWidgetProperty } from "mendix/TemplatedWidgetProperty";
 import { TextProperty } from "mendix/TextProperty";
+import { WebIconProperty } from "mendix/WebIconProperty";
 import { WebStaticImageProperty } from "mendix/WebStaticImageProperty";
 
 import { ActionButton } from "mendix/widgets/web/ActionButton";
@@ -294,7 +295,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                 buttonClass={"btn-default"}
                                                                                 caption={t([
                                                                                     ExpressionProperty({
-                                                                                        "expression": { "expr": { "type": "literal", "value": "View Team" }, "args": {} }
+                                                                                        "expression": { "expr": { "type": "literal", "value": "Visa teamet" }, "args": {} }
                                                                                     })
                                                                                 ])}
                                                                                 tooltip={TextProperty({
@@ -336,43 +337,13 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                             renderMode={"div"}
                                                             onClick={undefined}
                                                             content={[
-                                                                <$Image key="p.TaskTracker.Header.image2"
-                                                                    $widgetId="p.TaskTracker.Header.image2"
-                                                                    datasource={"imageUrl"}
-                                                                    imageObject={undefined}
-                                                                    defaultImageDynamic={undefined}
-                                                                    imageUrl={t([
-                                                                        ExpressionProperty({
-                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.Header.gallery1", "source": "object" } } }
-                                                                        })
-                                                                    ])}
-                                                                    imageIcon={undefined}
-                                                                    isBackgroundImage={false}
-                                                                    children={undefined}
-                                                                    onClickType={"enlarge"}
-                                                                    onClick={undefined}
-                                                                    alternativeText={t([
-                                                                        ExpressionProperty({
-                                                                            "expression": { "expr": { "type": "literal", "value": "" }, "args": {} }
-                                                                        })
-                                                                    ])}
-                                                                    widthUnit={"percentage"}
-                                                                    width={40}
-                                                                    heightUnit={"auto"}
-                                                                    height={100}
-                                                                    iconSize={14}
-                                                                    displayAs={"fullImage"}
-                                                                    responsive={true}
-                                                                    class={"mx-name-image2 img-circle img-center spacing-outer-top-medium"}
-                                                                    style={undefined}
-                                                                    tabIndex={undefined} />,
                                                                 <$Text key="p.TaskTracker.Header.text22"
                                                                     $widgetId="p.TaskTracker.Header.text22"
                                                                     class={"mx-name-text22 text-white"}
                                                                     style={undefined}
                                                                     caption={t([
                                                                         ExpressionProperty({
-                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "DisplayName" }, "args": { "currentObject": { "widget": "p.TaskTracker.Header.gallery1", "source": "object" } } }
+                                                                            "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Medlemmar: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.Header.gallery1", "source": "object" } } }
                                                                         })
                                                                     ])}
                                                                     renderMode={"span"} />
@@ -569,7 +540,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery2"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.58",
+                                            "dataSourceId": "p.56",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "wbuRWMnKgV6O13vzuTWFZw",
                                             "sort": [
@@ -581,7 +552,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "To_Do" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.58",
+                                            "dataSourceId": "p.56",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall2"
@@ -713,7 +684,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
@@ -849,7 +820,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery2", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.58",
+                                            "dataSourceId": "p.56",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -884,7 +855,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery3"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.59",
+                                            "dataSourceId": "p.57",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "KZW7IU+Qn1+OL39tXLH0Og",
                                             "sort": [
@@ -896,7 +867,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Running" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.59",
+                                            "dataSourceId": "p.57",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall3"
@@ -1028,7 +999,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.158", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.158", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
@@ -1164,7 +1135,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery3", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.59",
+                                            "dataSourceId": "p.57",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -1199,7 +1170,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery4"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.60",
+                                            "dataSourceId": "p.58",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "c8eN41V48VqZdexYDWwNxg",
                                             "sort": [
@@ -1211,7 +1182,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Review" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.60",
+                                            "dataSourceId": "p.58",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall4"
@@ -1343,7 +1314,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.188", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.188", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
@@ -1479,7 +1450,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery4", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.60",
+                                            "dataSourceId": "p.58",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -1514,7 +1485,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery5"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.61",
+                                            "dataSourceId": "p.59",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "32Xr/rn9CV2VG3hcstHkiw",
                                             "sort": [
@@ -1526,7 +1497,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Done" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.61",
+                                            "dataSourceId": "p.59",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall5"
@@ -1658,7 +1629,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.218", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.218", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
@@ -1794,7 +1765,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery5", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.61",
+                                            "dataSourceId": "p.59",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -1821,6 +1792,39 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         tabIndex={undefined} />
                                 ]} />
                         ]} />
+                ]} />,
+            <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskOverview.actionButton2$visibility"
+                $widgetId="p.TaskTracker.TaskOverview.actionButton2$visibility"
+                visible={ExpressionProperty({
+                    "expression": { "expr": { "type": "function", "name": "_hasSomeRole", "parameters": [ { "type": "literal", "value": "Manager" }, { "type": "literal", "value": "Member" } ] }, "args": {} }
+                })}
+                contents={[
+                    <$ActionButton key="p.TaskTracker.TaskOverview.actionButton2"
+                        $widgetId="p.TaskTracker.TaskOverview.actionButton2"
+                        buttonId={"p.TaskTracker.TaskOverview.actionButton2"}
+                        class={"mx-name-actionButton2 pull-right spacing-outer-right-large btn-lg"}
+                        style={undefined}
+                        tabIndex={undefined}
+                        renderType={"button"}
+                        role={undefined}
+                        buttonClass={"btn-danger"}
+                        caption={t([
+                            ExpressionProperty({
+                                "expression": { "expr": { "type": "literal", "value": "New" }, "args": {} }
+                            })
+                        ])}
+                        tooltip={TextProperty({
+                            "value": t([
+                                ""
+                            ])
+                        })}
+                        icon={WebIconProperty({
+                            "icon": { "type": "icon", "iconClass": "mx-icon-lined mx-icon-add-circle" }
+                        })}
+                        action={ActionProperty({
+                            "action": { "type": "createObject", "argMap": {}, "config": { "entity": "TaskTracker.Task", "operationId": "/AtlmHwVwVGhnmrid6r1pA", "pageSettings": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "allowedRoles": [ "Manager", "Member" ], "objectParameter": "param$Task" }, "disabledDuringExecution": true },
+                            "abortOnServerValidation": true
+                        })} />
                 ]} />
         ]}
         ariaHidden={false} />,
@@ -1909,7 +1913,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery6"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.234",
+                                            "dataSourceId": "p.235",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "nrUdhUyHZ1W4Gua63ItfHQ",
                                             "sort": [
@@ -1921,36 +1925,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "To_Do" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.234",
+                                            "dataSourceId": "p.235",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall6"
                                                     $widgetId="p.TaskTracker.TaskOverview.snippetCall6"
                                                     content={[
-                                                        <$Container key="p.TaskTracker.TaskCard.container3.259"
-                                                            $widgetId="p.TaskTracker.TaskCard.container3.259"
+                                                        <$Container key="p.TaskTracker.TaskCard.container3.260"
+                                                            $widgetId="p.TaskTracker.TaskCard.container3.260"
                                                             class={"mx-name-container3 card shadow-medium"}
                                                             style={undefined}
                                                             renderMode={"div"}
                                                             onClick={undefined}
                                                             content={[
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.260"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.260"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.261"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.261"
                                                                     class={"mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.261"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.261"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.262"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.262"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.262"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.262"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.263"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.263"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.263"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.263"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.264"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.264"
                                                                                             class={"mx-name-text4 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -1959,8 +1963,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h4"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.264"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.264"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.265"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.265"
                                                                                             class={"mx-name-text8 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -1970,18 +1974,18 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.265"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.265"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.266"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.266"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.266"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.266"
+                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.267"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.267"
                                                                                             class={"mx-name-dataView5 pull-right form-vertical"}
                                                                                             style={undefined}
                                                                                             tabIndex={undefined}
                                                                                             object={AssociationObjectProperty({
-                                                                                                "dataSourceId": "p.267",
+                                                                                                "dataSourceId": "p.268",
                                                                                                 "scope": "p.TaskTracker.TaskOverview.gallery6",
                                                                                                 "editable": true,
                                                                                                 "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -1993,14 +1997,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 ])
                                                                                             })}
                                                                                             body={[
-                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.268"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.268"
+                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.269"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.269"
                                                                                                     datasource={"imageUrl"}
                                                                                                     imageObject={undefined}
                                                                                                     defaultImageDynamic={undefined}
                                                                                                     imageUrl={t([
                                                                                                         ExpressionProperty({
-                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.266", "source": "object" } } }
+                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.267", "source": "object" } } }
                                                                                                         })
                                                                                                     ])}
                                                                                                     imageIcon={undefined}
@@ -2029,13 +2033,13 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                     ]} />
                                                                             ]} />
                                                                     ]} />,
-                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.269"
-                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.269"
+                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.270"
+                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.270"
                                                                     class={"mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical"}
                                                                     style={undefined}
                                                                     tabIndex={undefined}
                                                                     object={AssociationObjectProperty({
-                                                                        "dataSourceId": "p.270",
+                                                                        "dataSourceId": "p.271",
                                                                         "scope": "p.TaskTracker.TaskOverview.gallery6",
                                                                         "editable": true,
                                                                         "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2047,36 +2051,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                         ])
                                                                     })}
                                                                     body={[
-                                                                        <$Text key="p.TaskTracker.TaskCard.text6.271"
-                                                                            $widgetId="p.TaskTracker.TaskCard.text6.271"
+                                                                        <$Text key="p.TaskTracker.TaskCard.text6.272"
+                                                                            $widgetId="p.TaskTracker.TaskCard.text6.272"
                                                                             class={"mx-name-text6 text-detail spacing-outer-bottom"}
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.269", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.270", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
                                                                     ]}
                                                                     hideFooter={true}
                                                                     footer={undefined} />,
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.272"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.272"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.273"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.273"
                                                                     class={"mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.273"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.273"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.274"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.274"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.274"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.274"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.275"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.275"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.275"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.275"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.276"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.276"
                                                                                             class={"mx-name-text5 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2085,8 +2089,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h5"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.276"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.276"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.277"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.277"
                                                                                             class={"mx-name-text7 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2096,19 +2100,19 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.277"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.277"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.278"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.278"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.278"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.278"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.279"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.279"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery6", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.278"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.278"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.279"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.279"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2120,14 +2124,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.279"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.279"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.280"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.280"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery6", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.279"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.279"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.280"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.280"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2139,14 +2143,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.280"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.280"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.281"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.281"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery6", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.280"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.280"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.281"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.281"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2189,7 +2193,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery6", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.234",
+                                            "dataSourceId": "p.235",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -2252,7 +2256,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery7"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.235",
+                                            "dataSourceId": "p.236",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "/+Cm7gK9TFuiwDH8iGCN2Q",
                                             "sort": [
@@ -2264,36 +2268,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Running" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.235",
+                                            "dataSourceId": "p.236",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall7"
                                                     $widgetId="p.TaskTracker.TaskOverview.snippetCall7"
                                                     content={[
-                                                        <$Container key="p.TaskTracker.TaskCard.container3.297"
-                                                            $widgetId="p.TaskTracker.TaskCard.container3.297"
+                                                        <$Container key="p.TaskTracker.TaskCard.container3.298"
+                                                            $widgetId="p.TaskTracker.TaskCard.container3.298"
                                                             class={"mx-name-container3 card shadow-medium"}
                                                             style={undefined}
                                                             renderMode={"div"}
                                                             onClick={undefined}
                                                             content={[
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.298"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.298"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.299"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.299"
                                                                     class={"mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.299"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.299"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.300"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.300"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.300"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.300"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.301"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.301"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.301"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.301"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.302"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.302"
                                                                                             class={"mx-name-text4 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2302,8 +2306,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h4"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.302"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.302"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.303"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.303"
                                                                                             class={"mx-name-text8 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2313,18 +2317,18 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.303"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.303"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.304"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.304"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.304"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.304"
+                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.305"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.305"
                                                                                             class={"mx-name-dataView5 pull-right form-vertical"}
                                                                                             style={undefined}
                                                                                             tabIndex={undefined}
                                                                                             object={AssociationObjectProperty({
-                                                                                                "dataSourceId": "p.305",
+                                                                                                "dataSourceId": "p.306",
                                                                                                 "scope": "p.TaskTracker.TaskOverview.gallery7",
                                                                                                 "editable": true,
                                                                                                 "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2336,14 +2340,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 ])
                                                                                             })}
                                                                                             body={[
-                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.306"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.306"
+                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.307"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.307"
                                                                                                     datasource={"imageUrl"}
                                                                                                     imageObject={undefined}
                                                                                                     defaultImageDynamic={undefined}
                                                                                                     imageUrl={t([
                                                                                                         ExpressionProperty({
-                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.304", "source": "object" } } }
+                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.305", "source": "object" } } }
                                                                                                         })
                                                                                                     ])}
                                                                                                     imageIcon={undefined}
@@ -2372,13 +2376,13 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                     ]} />
                                                                             ]} />
                                                                     ]} />,
-                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.307"
-                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.307"
+                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.308"
+                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.308"
                                                                     class={"mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical"}
                                                                     style={undefined}
                                                                     tabIndex={undefined}
                                                                     object={AssociationObjectProperty({
-                                                                        "dataSourceId": "p.308",
+                                                                        "dataSourceId": "p.309",
                                                                         "scope": "p.TaskTracker.TaskOverview.gallery7",
                                                                         "editable": true,
                                                                         "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2390,36 +2394,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                         ])
                                                                     })}
                                                                     body={[
-                                                                        <$Text key="p.TaskTracker.TaskCard.text6.309"
-                                                                            $widgetId="p.TaskTracker.TaskCard.text6.309"
+                                                                        <$Text key="p.TaskTracker.TaskCard.text6.310"
+                                                                            $widgetId="p.TaskTracker.TaskCard.text6.310"
                                                                             class={"mx-name-text6 text-detail spacing-outer-bottom"}
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.307", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.308", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
                                                                     ]}
                                                                     hideFooter={true}
                                                                     footer={undefined} />,
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.310"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.310"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.311"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.311"
                                                                     class={"mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.311"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.311"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.312"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.312"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.312"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.312"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.313"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.313"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.313"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.313"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.314"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.314"
                                                                                             class={"mx-name-text5 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2428,8 +2432,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h5"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.314"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.314"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.315"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.315"
                                                                                             class={"mx-name-text7 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2439,19 +2443,19 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.315"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.315"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.316"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.316"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.316"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.316"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.317"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.317"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery7", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.316"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.316"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.317"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.317"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2463,14 +2467,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.317"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.317"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.318"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.318"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery7", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.317"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.317"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.318"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.318"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2482,14 +2486,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.318"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.318"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.319"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.319"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery7", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.318"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.318"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.319"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.319"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2532,7 +2536,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery7", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.235",
+                                            "dataSourceId": "p.236",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -2595,7 +2599,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery8"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.236",
+                                            "dataSourceId": "p.237",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "j0I7TPn+v1Go/xj6/sAYvQ",
                                             "sort": [
@@ -2607,36 +2611,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Review" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.236",
+                                            "dataSourceId": "p.237",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall8"
                                                     $widgetId="p.TaskTracker.TaskOverview.snippetCall8"
                                                     content={[
-                                                        <$Container key="p.TaskTracker.TaskCard.container3.335"
-                                                            $widgetId="p.TaskTracker.TaskCard.container3.335"
+                                                        <$Container key="p.TaskTracker.TaskCard.container3.336"
+                                                            $widgetId="p.TaskTracker.TaskCard.container3.336"
                                                             class={"mx-name-container3 card shadow-medium"}
                                                             style={undefined}
                                                             renderMode={"div"}
                                                             onClick={undefined}
                                                             content={[
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.336"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.336"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.337"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.337"
                                                                     class={"mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.337"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.337"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.338"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.338"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.338"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.338"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.339"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.339"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.339"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.339"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.340"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.340"
                                                                                             class={"mx-name-text4 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2645,8 +2649,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h4"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.340"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.340"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.341"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.341"
                                                                                             class={"mx-name-text8 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2656,18 +2660,18 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.341"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.341"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.342"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.342"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.342"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.342"
+                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.343"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.343"
                                                                                             class={"mx-name-dataView5 pull-right form-vertical"}
                                                                                             style={undefined}
                                                                                             tabIndex={undefined}
                                                                                             object={AssociationObjectProperty({
-                                                                                                "dataSourceId": "p.343",
+                                                                                                "dataSourceId": "p.344",
                                                                                                 "scope": "p.TaskTracker.TaskOverview.gallery8",
                                                                                                 "editable": true,
                                                                                                 "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2679,14 +2683,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 ])
                                                                                             })}
                                                                                             body={[
-                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.344"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.344"
+                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.345"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.345"
                                                                                                     datasource={"imageUrl"}
                                                                                                     imageObject={undefined}
                                                                                                     defaultImageDynamic={undefined}
                                                                                                     imageUrl={t([
                                                                                                         ExpressionProperty({
-                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.342", "source": "object" } } }
+                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.343", "source": "object" } } }
                                                                                                         })
                                                                                                     ])}
                                                                                                     imageIcon={undefined}
@@ -2715,13 +2719,13 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                     ]} />
                                                                             ]} />
                                                                     ]} />,
-                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.345"
-                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.345"
+                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.346"
+                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.346"
                                                                     class={"mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical"}
                                                                     style={undefined}
                                                                     tabIndex={undefined}
                                                                     object={AssociationObjectProperty({
-                                                                        "dataSourceId": "p.346",
+                                                                        "dataSourceId": "p.347",
                                                                         "scope": "p.TaskTracker.TaskOverview.gallery8",
                                                                         "editable": true,
                                                                         "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -2733,36 +2737,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                         ])
                                                                     })}
                                                                     body={[
-                                                                        <$Text key="p.TaskTracker.TaskCard.text6.347"
-                                                                            $widgetId="p.TaskTracker.TaskCard.text6.347"
+                                                                        <$Text key="p.TaskTracker.TaskCard.text6.348"
+                                                                            $widgetId="p.TaskTracker.TaskCard.text6.348"
                                                                             class={"mx-name-text6 text-detail spacing-outer-bottom"}
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.345", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.346", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
                                                                     ]}
                                                                     hideFooter={true}
                                                                     footer={undefined} />,
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.348"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.348"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.349"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.349"
                                                                     class={"mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.349"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.349"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.350"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.350"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.350"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.350"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.351"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.351"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.351"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.351"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.352"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.352"
                                                                                             class={"mx-name-text5 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2771,8 +2775,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h5"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.352"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.352"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.353"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.353"
                                                                                             class={"mx-name-text7 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2782,19 +2786,19 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.353"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.353"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.354"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.354"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.354"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.354"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.355"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.355"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery8", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.354"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.354"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.355"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.355"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2806,14 +2810,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.355"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.355"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.356"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.356"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery8", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.355"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.355"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.356"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.356"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2825,14 +2829,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.356"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.356"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.357"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.357"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery8", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.356"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.356"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.357"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.357"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -2875,7 +2879,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery8", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.236",
+                                            "dataSourceId": "p.237",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}
@@ -2938,7 +2942,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         $widgetId="p.TaskTracker.TaskOverview.gallery9"
                                         advanced={false}
                                         datasource={DatabaseObjectListProperty({
-                                            "dataSourceId": "p.237",
+                                            "dataSourceId": "p.238",
                                             "entity": "TaskTracker.Task",
                                             "operationId": "JIF87WrqsFWP2xNVGTtv0A",
                                             "sort": [
@@ -2950,36 +2954,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                             "constraints": { "type": "function", "name": "=", "parameters": [ { "type": "attribute", "attribute": "Status", "context": "TaskTracker.Task", "attributeType": "#TaskTracker.ENUM_Status" }, { "type": "literal", "value": "Done" } ] }
                                         })}
                                         content={TemplatedWidgetProperty({
-                                            "dataSourceId": "p.237",
+                                            "dataSourceId": "p.238",
                                             "editable": false,
                                             "children": () => [
                                                 <$Fragment key="p.TaskTracker.TaskOverview.snippetCall9"
                                                     $widgetId="p.TaskTracker.TaskOverview.snippetCall9"
                                                     content={[
-                                                        <$Container key="p.TaskTracker.TaskCard.container3.373"
-                                                            $widgetId="p.TaskTracker.TaskCard.container3.373"
+                                                        <$Container key="p.TaskTracker.TaskCard.container3.374"
+                                                            $widgetId="p.TaskTracker.TaskCard.container3.374"
                                                             class={"mx-name-container3 card shadow-medium"}
                                                             style={undefined}
                                                             renderMode={"div"}
                                                             onClick={undefined}
                                                             content={[
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.374"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.374"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid1.375"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid1.375"
                                                                     class={"mx-name-layoutGrid1 mx-layoutgrid mx-layoutgrid-fluid spacing-inner-left-none spacing-inner-right-none spacing-inner-top-none"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.375"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.375"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0.376"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0.376"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.376"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.376"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.377"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column0.377"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.377"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.377"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text4.378"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text4.378"
                                                                                             class={"mx-name-text4 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2988,8 +2992,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h4"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.378"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.378"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text8.379"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text8.379"
                                                                                             class={"mx-name-text8 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -2999,18 +3003,18 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.379"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.379"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.380"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid1$row0$column1.380"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.380"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.380"
+                                                                                        <$DataView key="p.TaskTracker.TaskCard.dataView5.381"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.dataView5.381"
                                                                                             class={"mx-name-dataView5 pull-right form-vertical"}
                                                                                             style={undefined}
                                                                                             tabIndex={undefined}
                                                                                             object={AssociationObjectProperty({
-                                                                                                "dataSourceId": "p.381",
+                                                                                                "dataSourceId": "p.382",
                                                                                                 "scope": "p.TaskTracker.TaskOverview.gallery9",
                                                                                                 "editable": true,
                                                                                                 "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -3022,14 +3026,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 ])
                                                                                             })}
                                                                                             body={[
-                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.382"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.382"
+                                                                                                <$Image key="p.TaskTracker.TaskCard.image1.383"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.image1.383"
                                                                                                     datasource={"imageUrl"}
                                                                                                     imageObject={undefined}
                                                                                                     defaultImageDynamic={undefined}
                                                                                                     imageUrl={t([
                                                                                                         ExpressionProperty({
-                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.380", "source": "object" } } }
+                                                                                                            "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView5.381", "source": "object" } } }
                                                                                                         })
                                                                                                     ])}
                                                                                                     imageIcon={undefined}
@@ -3058,13 +3062,13 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                     ]} />
                                                                             ]} />
                                                                     ]} />,
-                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.383"
-                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.383"
+                                                                <$DataView key="p.TaskTracker.TaskCard.dataView9.384"
+                                                                    $widgetId="p.TaskTracker.TaskCard.dataView9.384"
                                                                     class={"mx-name-dataView9 spacing-outer-top-large hide-phone form-vertical"}
                                                                     style={undefined}
                                                                     tabIndex={undefined}
                                                                     object={AssociationObjectProperty({
-                                                                        "dataSourceId": "p.384",
+                                                                        "dataSourceId": "p.385",
                                                                         "scope": "p.TaskTracker.TaskOverview.gallery9",
                                                                         "editable": true,
                                                                         "path": "TaskTracker.Task_MendixSSOUser_Assignee/MendixSSO.MendixSSOUser",
@@ -3076,36 +3080,36 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                         ])
                                                                     })}
                                                                     body={[
-                                                                        <$Text key="p.TaskTracker.TaskCard.text6.385"
-                                                                            $widgetId="p.TaskTracker.TaskCard.text6.385"
+                                                                        <$Text key="p.TaskTracker.TaskCard.text6.386"
+                                                                            $widgetId="p.TaskTracker.TaskCard.text6.386"
                                                                             class={"mx-name-text6 text-detail spacing-outer-bottom"}
                                                                             style={undefined}
                                                                             caption={t([
                                                                                 ExpressionProperty({
-                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Assigned to " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.383", "source": "object" } } }
+                                                                                    "expression": { "expr": { "type": "function", "name": "+", "parameters": [ { "type": "literal", "value": "Tilldelad: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" } ] }, "args": { "currentObject": { "widget": "p.TaskTracker.TaskCard.dataView9.384", "source": "object" } } }
                                                                                 })
                                                                             ])}
                                                                             renderMode={"p"} />
                                                                     ]}
                                                                     hideFooter={true}
                                                                     footer={undefined} />,
-                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.386"
-                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.386"
+                                                                <$Div key="p.TaskTracker.TaskCard.layoutGrid2.387"
+                                                                    $widgetId="p.TaskTracker.TaskCard.layoutGrid2.387"
                                                                     class={"mx-name-layoutGrid2 mx-layoutgrid mx-layoutgrid-fluid"}
                                                                     style={undefined}
                                                                     content={[
-                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.387"
-                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.387"
+                                                                        <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0.388"
+                                                                            $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0.388"
                                                                             class={"row"}
                                                                             style={undefined}
                                                                             content={[
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.388"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.388"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.389"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column0.389"
                                                                                     class={"col-lg col-md col"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.389"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.389"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text5.390"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text5.390"
                                                                                             class={"mx-name-text5 hide-phone hide-tablet"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -3114,8 +3118,8 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                 })
                                                                                             ])}
                                                                                             renderMode={"h5"} />,
-                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.390"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.390"
+                                                                                        <$Text key="p.TaskTracker.TaskCard.text7.391"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.text7.391"
                                                                                             class={"mx-name-text7 hide-desktop"}
                                                                                             style={undefined}
                                                                                             caption={t([
@@ -3125,19 +3129,19 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                             ])}
                                                                                             renderMode={"h5"} />
                                                                                     ]} />,
-                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.391"
-                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.391"
+                                                                                <$Div key="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.392"
+                                                                                    $widgetId="p.TaskTracker.TaskOverview.layoutGrid2$row0$column1.392"
                                                                                     class={"col-lg-auto col-md-auto col-auto"}
                                                                                     style={undefined}
                                                                                     content={[
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.392"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.392"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge1$visibility.393"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge1$visibility.393"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Low" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery9", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.392"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.392"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge1.393"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge1.393"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -3149,14 +3153,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.393"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.393"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge2$visibility.394"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge2$visibility.394"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "Medium" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery9", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.393"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.393"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge2.394"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge2.394"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -3168,14 +3172,14 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                                                                                     style={undefined}
                                                                                                     tabIndex={undefined} />
                                                                                             ]} />,
-                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.394"
-                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.394"
+                                                                                        <$ConditionalVisibilityWrapper key="p.TaskTracker.TaskCard.badge3$visibility.395"
+                                                                                            $widgetId="p.TaskTracker.TaskCard.badge3$visibility.395"
                                                                                             visible={ExpressionProperty({
                                                                                                 "expression": { "expr": { "type": "function", "name": "=", "parameters": [ { "type": "variable", "variable": "Task", "path": "Priority" }, { "type": "literal", "value": "High" } ] }, "args": { "Task": { "widget": "p.TaskTracker.TaskOverview.gallery9", "source": "object" } } }
                                                                                             })}
                                                                                             contents={[
-                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.394"
-                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.394"
+                                                                                                <$Badge key="p.TaskTracker.TaskCard.badge3.395"
+                                                                                                    $widgetId="p.TaskTracker.TaskCard.badge3.395"
                                                                                                     type={"badge"}
                                                                                                     value={t([
                                                                                                         ExpressionProperty({
@@ -3218,7 +3222,7 @@ const region$Main = (historyId) => (<PageFragment renderKey={historyId}>{[
                                         onClick={ListActionProperty({
                                             "action": { "type": "openPage", "argMap": { "param$Task": { "widget": "p.TaskTracker.TaskOverview.gallery9", "source": "object" } }, "config": { "name": "TaskTracker/TaskEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": [ "Manager", "Member" ] }, "disabledDuringExecution": false },
                                             "abortOnServerValidation": false,
-                                            "dataSourceId": "p.237",
+                                            "dataSourceId": "p.238",
                                             "argumentTypes": { }
                                         })}
                                         filterList={[]}

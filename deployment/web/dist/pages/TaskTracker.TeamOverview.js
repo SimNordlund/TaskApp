@@ -360,7 +360,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                             buttonClass: "btn-default",
                                                             caption: selectTranslation([
                                                               ExpressionProperty({
-                                                                "expression": { "expr": { "type": "literal", "value": "View Team" }, "args": {} }
+                                                                "expression": { "expr": { "type": "literal", "value": "Visa teamet" }, "args": {} }
                                                               })
                                                             ]),
                                                             tooltip: TextProperty({
@@ -419,41 +419,6 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                             onClick: void 0,
                                             content: [
                                               /* @__PURE__ */ React.createElement(
-                                                $Image,
-                                                {
-                                                  key: "p.TaskTracker.Header.image2",
-                                                  $widgetId: "p.TaskTracker.Header.image2",
-                                                  datasource: "imageUrl",
-                                                  imageObject: void 0,
-                                                  defaultImageDynamic: void 0,
-                                                  imageUrl: selectTranslation([
-                                                    ExpressionProperty({
-                                                      "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "AvatarURL" }, "args": { "currentObject": { "widget": "p.TaskTracker.Header.gallery1", "source": "object" } } }
-                                                    })
-                                                  ]),
-                                                  imageIcon: void 0,
-                                                  isBackgroundImage: false,
-                                                  children: void 0,
-                                                  onClickType: "enlarge",
-                                                  onClick: void 0,
-                                                  alternativeText: selectTranslation([
-                                                    ExpressionProperty({
-                                                      "expression": { "expr": { "type": "literal", "value": "" }, "args": {} }
-                                                    })
-                                                  ]),
-                                                  widthUnit: "percentage",
-                                                  width: 40,
-                                                  heightUnit: "auto",
-                                                  height: 100,
-                                                  iconSize: 14,
-                                                  displayAs: "fullImage",
-                                                  responsive: true,
-                                                  class: "mx-name-image2 img-circle img-center spacing-outer-top-medium",
-                                                  style: void 0,
-                                                  tabIndex: void 0
-                                                }
-                                              ),
-                                              /* @__PURE__ */ React.createElement(
                                                 $Text,
                                                 {
                                                   key: "p.TaskTracker.Header.text22",
@@ -462,7 +427,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                   style: void 0,
                                                   caption: selectTranslation([
                                                     ExpressionProperty({
-                                                      "expression": { "expr": { "type": "variable", "variable": "currentObject", "path": "DisplayName" }, "args": { "currentObject": { "widget": "p.TaskTracker.Header.gallery1", "source": "object" } } }
+                                                      "expression": { "expr": { "type": "function", "name": "+", "parameters": [{ "type": "literal", "value": "Medlemmar: " }, { "type": "variable", "variable": "currentObject", "path": "DisplayName" }] }, "args": { "currentObject": { "widget": "p.TaskTracker.Header.gallery1", "source": "object" } } }
                                                     })
                                                   ]),
                                                   renderMode: "span"
@@ -602,7 +567,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               $widgetId: "p.TaskTracker.TeamOverview.gallery2",
                               advanced: false,
                               datasource: DatabaseObjectListProperty({
-                                "dataSourceId": "p.56",
+                                "dataSourceId": "p.54",
                                 "entity": "MendixSSO.MendixSSOUser",
                                 "operationId": "Q0c4MfGaHVyyDO2lkx4IxQ",
                                 "sort": [
@@ -613,7 +578,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                 ]
                               }),
                               content: TemplatedWidgetProperty({
-                                "dataSourceId": "p.56",
+                                "dataSourceId": "p.54",
                                 "editable": false,
                                 "children": () => [
                                   /* @__PURE__ */ React.createElement(
@@ -689,7 +654,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                                                               style: void 0,
                                                               tabIndex: void 0,
                                                               object: MicroflowObjectProperty({
-                                                                "dataSourceId": "p.87",
+                                                                "dataSourceId": "p.85",
                                                                 "scope": "p.TaskTracker.TeamOverview.gallery2",
                                                                 "editable": true,
                                                                 "operationId": "9Ci4R0ARFV2gAkEl+XhXjA",
@@ -794,7 +759,7 @@ const region$Main = (historyId) => /* @__PURE__ */ React.createElement(PageFragm
                               onClick: ListActionProperty({
                                 "action": { "type": "openPage", "argMap": { "param$MendixSSOUser": { "widget": "p.TaskTracker.TeamOverview.gallery2", "source": "object" } }, "config": { "name": "TaskTracker/MyAccountViewEdit.page.xml", "location": "modal", "resizable": false, "allowedRoles": ["Manager", "Member"] }, "disabledDuringExecution": false },
                                 "abortOnServerValidation": false,
-                                "dataSourceId": "p.56",
+                                "dataSourceId": "p.54",
                                 "argumentTypes": {}
                               }),
                               filterList: [],
